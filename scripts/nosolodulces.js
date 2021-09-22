@@ -76,8 +76,8 @@ comida.push(comi);
 //console.log(comida);
 
 // await page.screenshot({path:path.join(__dirname,`${website.scriptName}.png`)});
-fs.writeFileSync(path.join(__dirname,`${website.scriptName}.json`),JSON.stringify(Food),'utf8');
-fs.writeFileSync(path.join(__dirname,`Imagenes.json`),JSON.stringify(Imagenes),'utf8');
+//fs.writeFileSync(path.join(__dirname,`${website.scriptName}.json`),JSON.stringify(Food),'utf8');
+//fs.writeFileSync(path.join(__dirname,`Imagenes.json`),JSON.stringify(Imagenes),'utf8');
 fs.writeFileSync(path.join(__dirname,`comida.json`),JSON.stringify(comida),'utf8');
 
 };
