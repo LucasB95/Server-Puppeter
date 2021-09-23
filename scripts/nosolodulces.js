@@ -1,13 +1,16 @@
+
 const fs = require('fs');
 const path = require('path');
+const busq = require('../server');
 module.exports = async (page,website) => {
 
     const {selectors} = website;
-    var q = "calabaza"
+    //var q = module.exports.busq;
+    
 
 await page.goto(website.url);
 await page.waitForSelector('body > header > div > div > div > form > input.search-field')
-await page.type('body > header > div > div > div > form > input.search-field',`${q}`);
+await page.type('body > header > div > div > div > form > input.search-field',`${busq}`);
 await page.waitForSelector(selectors.buscador);
 await page.click(selectors.buscador);
 
