@@ -4,7 +4,7 @@ const websites = require('./websites.json');
 
 
 (async () => {
-    const browser = await puppeteer.launch({});
+    const browser = await puppeteer.launch({headless:false});
     const page = await browser.newPage();
 
     for(const website of websites){
@@ -13,7 +13,7 @@ const websites = require('./websites.json');
         console.log('Scrapping done for',website.name);
     }
 
-await browser.close();
+//await browser.close();
 //headless:false
 
 })();
