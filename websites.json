@@ -1,9 +1,0 @@
-[{"name":"Nosolodulces",
-    "url": "https://nosolodulces.es",
-    "scriptName":"nosolodulces",
-    "selectors" : {
-        "buscador" : "body > header > div > div > div > form > input.search-submit",
-        "ListTag" : "body > div > section > div > article > div",
-        "Image" : "body > div > section > div > article > a > img"
-    }
-    }]
