@@ -1,18 +1,25 @@
 
 const fs = require('fs');
+
 const path = require('path');
 //const busq = require('../server');
 module.exports = async (page,website,buscador) => {
 
     const {selectors} = website;
-    var q = "papa";
+    var q = "pepino";
     
 
 await page.goto(website.url);
-await page.waitForSelector('body > header > div > div > div > form > input.search-field')
-await page.type('body > header > div > div > div > form > input.search-field',`${buscador}`);
-await page.waitForSelector(selectors.buscador);
-await page.click(selectors.buscador);
+const url = await page.url();
+await new Promise(_func => setTimeout(_func,5000));
+console.log("haber si llega "  + process.env.busqLocal);
+const pagina = url+ "?s=" + `${ process.env.busqLocal}`;
+await page.keyboard.press('Enter');
+await page.goto(pagina);
+// await page.waitForSelector('body > header > div > div > div > form > input.search-field')
+// await page.type('body > header > div > div > div > form > input.search-field',`${buscador}`);
+// await page.waitForSelector(selectors.buscador);
+// await page.click(selectors.buscador);
 
 await page.waitForSelector(selectors.Image);
 const image = await page.evaluate( (Image) => {
