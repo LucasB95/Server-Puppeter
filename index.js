@@ -12,15 +12,19 @@ const busq = require('./server');
         });
         const page = await browser.newPage();
         const buscador = await busq;
-    
-        for(let i=1 ; i<= 10;i++){
+        var contador = 1;
 
-        for(const website of websites){
-            const scriptPath = path.join(__dirname,'scripts',website.scriptName);
-           await require(scriptPath)(page,website,buscador);
-            console.log('Scrapping done for',website.name);
-        }
-    }
+
+        // for(let i=1 ; i<= 10;i++){
+            while(contador == 1){
+
+                for(const website of websites){
+                    const scriptPath = path.join(__dirname,'scripts',website.scriptName);
+                   await require(scriptPath)(page,website,buscador);
+                    console.log('Scrapping done for',website.name);
+                }
+            }
+    // }
     
     //await browser.close();
     //headless:false
