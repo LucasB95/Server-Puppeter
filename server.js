@@ -24,7 +24,10 @@ app.get('/api/search/:q', (req,res) => {
     console.log("haber eso "+    process.env.busqLocal)
     console.log("busqueda: ", req.params.q);
 
-    res.send(req.params.q)
+    //res.send(req.params.q)
+    rawdata = fs.readFileSync('scripts/comida.json');
+    student = JSON.parse(rawdata);
+    res.send(student)
 
     res.end();
   
