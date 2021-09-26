@@ -6,7 +6,10 @@ const websites = require('./websites.json');
 const busq = require('./server');
 
     (async () => {
-        const browser = await puppeteer.launch({headless:false});
+        const browser = await puppeteer.launch({
+            headless:false,
+            args: ['--no-sandbox']
+        });
         const page = await browser.newPage();
         const buscador = await busq;
     
