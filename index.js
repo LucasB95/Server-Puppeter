@@ -7,7 +7,7 @@ const busq = require('./server');
 
     (async () => {
         const browser = await puppeteer.launch({
-            headless:false,
+            // headless:false,
             args: ['--no-sandbox']
         });
         const page = await browser.newPage();
