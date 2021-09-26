@@ -12,7 +12,7 @@ const busq = require('./server');
         });
         const page = await browser.newPage();
         const buscador = await busq;
-        var contador = 1;
+        //var contador = 1;
 
 
         for(let i=1 ; i<= 10;i++){
